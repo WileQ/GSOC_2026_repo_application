@@ -18,16 +18,16 @@ score (Area Under the ROC Curve)
 
 In order to create a model with the highest performance, I decided to use transfer learning utilizing a pre-trained backbone. To achieve the task I compared 3 models with distinct architecture - Resnet50, DenseNet-161 & EfficientNetv2.
 
-## Dimensionality Reduction
+### Dimensionality Reduction
 The features are getting compressed and filtered out using linear transformation and ReLU activation with all models final layer having 64 features. The proces in preceded by Global Average Pooling (GAP), collapsing the spatial dimensions and ensuring the model is invariant to the objects position in the image.
 
-## Regularization
+### Regularization
 The models use BatchNorm to normalize inputs and Dropout to deactivate neurons during training, preventing overfitting.
 
-## Loss Function
+### Loss Function
 The loss function used is CrossEntropyLoss, which is the most preferable function for multi-class classification.
 
-## Adaptive Learning
+### Adaptive Learning
 All models use the Adam optimizer to adjust the learning rate for each parameter.
 
 
@@ -37,12 +37,12 @@ All models use the Adam optimizer to adjust the learning rate for each parameter
 A large variety of hyperparameters was tested but for most of the final models I used these.
 
 ## Hyperparameters
-BATCH_SIZE: 64
-LEARNING_RATE: 1e-4 (1e-3 for resnet)
-DROPOUT: 0.33 (0.3 for densenet)
-EPOCHS: 10
-OPTIMIZER: Adam
-LOSS FUNCTION: CrossEntropyLoss
+- BATCH_SIZE: 64
+- LEARNING_RATE: 1e-4 (1e-3 for resnet)
+- DROPOUT: 0.33 (0.3 for densenet)
+- EPOCHS: 10
+- OPTIMIZER: Adam
+- LOSS FUNCTION: CrossEntropyLoss
 
 ---
 # Results
@@ -69,7 +69,7 @@ ResNet and DenseNet achieved very similar performance while EffNet had a slightl
 
 ![ROC Curve ResNet 50](plots/resnet-roc.png)
 
-![Confusion Matrix ResNet 50](plots/resnet-roc.png)
+![Confusion Matrix ResNet 50](plots/resnet-matrix.png)
 
 ## Densenet 161
 

@@ -22,28 +22,28 @@ score (Area Under the ROC Curve)
 
 In order to create a model with the highest performance, I decided to use transfer learning utilizing a pre-trained backbone. To achieve the task I used a model which achieved the highest performance using classic ml methods - ResNet 50. 
 
-## Feature Extraction
+### Feature Extraction
 The features are extracted before running the model into files for train and validation sets. It accelerates the quantum training later on and allows for more flexibility when choosing the hyperparameters and the architercutre.
 
-## Dimensionality Reduction
+### Dimensionality Reduction
 The features are getting compressed and filtered out using linear transformation and ReLU activation with the model having 64 features and finally 12 to match the amount of qubits. 
 
-## Regularization
+### Regularization
 The model uses BatchNorm to normalize inputs and Dropout to deactivate neurons during training, preventing overfitting.
 
-## Loss Function
+### Loss Function
 The loss function used is CrossEntropyLoss, which is the most preferable function for multi-class classification.
 
-## Adaptive Learning
+### Adaptive Learning
 The quantum model uses the Adam optimizer to adjust the learning rate for each parameter. It also uses ReduceLROnPlateau to decrease the learning rate if there is no improvement in 3 epochs.
 
-## Data Encoding
+### Data Encoding
 The AngleEmbedding function scaled the features [-pi/2, pi/2] (ensures data right place on Bloch Sphere) to avoid the data representation problems in the quantum state. 
 
-## Entangling 
+### Entangling 
 The qubits get the 3 axis rotation and then each qubits is getting linked to another using a CNOT gate.
 
-## Connecting classic ml and quantum
+### Connecting classic ml and quantum
 To bridge the differences between classic ml and quantum ml, the expectation values turn quant probabilities into numbers and the parameter-shift rule ensures smooth transition from qubits to neurons.
 
 ---
@@ -52,14 +52,14 @@ To bridge the differences between classic ml and quantum ml, the expectation val
 A large variety of hyperparameters was tested but for most of the final models I used these.
 
 ## Hyperparameters
-BATCH_SIZE: 32
-LEARNING_RATE: 1e-3
-DROPOUT: 0.33
-EPOCHS: 20
-QUBITS: 12
-LAYERS: 7
-OPTIMIZER: Adam
-LOSS FUNCTION: CrossEntropyLoss
+- BATCH_SIZE: 32
+- LEARNING_RATE: 1e-3
+- DROPOUT: 0.33
+- EPOCHS: 20
+- QUBITS: 12
+- LAYERS: 7
+- OPTIMIZER: Adam
+- LOSS FUNCTION: CrossEntropyLoss
 
 ---
 # Results
