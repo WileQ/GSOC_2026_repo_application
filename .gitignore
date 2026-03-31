@@ -1,4 +1,2 @@
 venv_gsoc/
 dataset/
-*.pth
-*.npz
