@@ -20,8 +20,8 @@ Below are the results achieved in each task.
 | **Subhalo substructure F1-Score** | 0.92 | 0.93 | 0.85| 
 | **Accuracy** | 0.91 | 0.91 | 0.85| 
 
-Best ROC curve:
-![ROC Curve ResNet 50](Code_basic_task/plots/densenet-roc.png)
+Best ROC curve (ResNet 50):
+![ROC Curve ResNet 50](Code_basic_task/plots/resnet-roc.png)
 
 
 ### Quantum ml test
